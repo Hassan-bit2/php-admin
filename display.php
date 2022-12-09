@@ -1,30 +1,30 @@
 <?php
-
+SESSION_START();
 include ("config.php");
-
-$sql = "SELECT id, username, password, is_admin FROM login_details";
-$result = $conn->query($sql);
 
 ?>
 
-<!DOCTYPE html>
+<html>
 <body>
 <section>
 <table>
     <tr>
-        <th>id</th>
-        <th>username</th>
-        <th>password</th>
-        <th>is_admin</th>
-    </tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Mobile no.</th>
+		<th>Address</th>
+		<th>Office</th>
+		<th>Blood Group</th>
+	</tr>
 
 <?php
-$sql = "SELECT id, username, password, is_admin FROM login_details";
+$sql = "SELECT * FROM address_book_details";
 $result = $conn->query($sql);
 
 if ($result-> num_rows > 0) {
 	while ($row = $result-> fetch_assoc()) {
-		echo "<tr><td>". $row["id"] ."</td><td>". $row["username"] ."</td><td>". $row["password"] ."</td><td>" .$row["is_admin"] ."</td><td>" .$row["delete"] ."</td></tr>";
+		echo "<tr><td>". $row["firstname"] ."</td><td>". $row["lastname"] ."</td><td>". $row["mobileno"] ."</td><td>" .$row["address"] ."</td><td>" .$row["office"] ."</td><td>". $row["bloodgroup"]."</td></tr>";
+		//header("address_book.php");
 	}
 	echo "</table>";
 }
@@ -35,6 +35,11 @@ else {
 $conn-> close();
 ?>
 
+<a href="http://127.0.0.1/address%20book/user/address_book.php">
+		<button type="submit"> Back to Entry Form
+		</a>
+		</button>
 
 </section>
 </body>
+</html>
