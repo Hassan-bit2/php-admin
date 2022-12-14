@@ -1,12 +1,13 @@
 <?php
+include ("config.php");
 session_start();
-$con = mysqli_connect("localhost","root","root","php_form");
+$con = mysqli_connect("localhost","root","root","address_book");
 
 if(isset($_POST['delete_btn']))
 {
-    $id = $_POST['delete_id'];
+    $firstname = $_POST['delete_name'];
 
-    $query = "DELETE FROM login_details WHERE id='$id' ";
+    $query = "DELETE FROM address_book_details WHERE firstname='$firstname' ";
     $query_run = mysqli_query($con, $query);
 
     if($query_run)

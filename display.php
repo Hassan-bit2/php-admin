@@ -39,6 +39,11 @@ $conn-> close();
 		<button type="submit"> Back to Entry Form
 		</a>
 		</button>
+		
+<a href="http://127.0.0.1/address%20book/user/index.php">
+		<button type="submit"> Delete Data from book
+		</a>
+		</button>		
 
 </section>
 </body>
