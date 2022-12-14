@@ -40,10 +40,15 @@ $conn-> close();
 		</a>
 		</button>
 		
-<a href="http://127.0.0.1/address%20book/user/index.php">
+<a href="http://127.0.0.1/address%20book/user/delete.php">
 		<button type="submit"> Delete Data from book
 		</a>
 		</button>		
+		
+<a href="http://127.0.0.1/address%20book/user/login.php">
+		<button type="submit"> Logout
+		</a>
+		</button>				
 
 </section>
 </body>
